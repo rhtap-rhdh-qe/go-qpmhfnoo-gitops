@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-qpmhfnoo-gitops
+  description: This is GitOps manifest for go-qpmhfnoo   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-qpmhfnoo
+    backstage.io/kubernetes-id: go-qpmhfnoo 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: go-qpmhfnoo-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-qpmhfnoo
